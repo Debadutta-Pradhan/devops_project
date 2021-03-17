@@ -13,14 +13,6 @@ pipeline {
 
   stages{
 
-    stage ('Clone git') {
-      steps{
-        echo "Cloning the project"
-        git {[url: 'https://github.com/Debadutta-Pradhan/devops_project.git', branch: 'master', credentialsId: 'github']}
-      }
-    }
-
-
     stage ('Build Docker Image') {
       steps{
         echo "Building Docker Image"
