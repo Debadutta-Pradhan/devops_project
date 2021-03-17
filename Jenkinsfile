@@ -15,7 +15,7 @@ pipeline {
 	  
 stage ('Clone the project') {
       steps{
-	  git ([URL: 'https://github.com/Debadutta-Pradhan/devops_project.git', branch: 'master', credentialsId: 'gitlab'])
+	  git ([url: 'https://github.com/Debadutta-Pradhan/devops_project.git', branch: 'master', credentialsId: 'gitlab'])
       }
     }
     stage ('Build Docker Image') {
