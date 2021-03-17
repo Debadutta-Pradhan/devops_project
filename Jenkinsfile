@@ -3,7 +3,7 @@ pipeline {
 
     registry = "debaduttapradhan1996/devops-project"
 
-    registryCredential = 'docker_hub_debadutta'
+    registryCredential = 'docker_hub'
 
     dockerImage = ''
 
@@ -12,7 +12,12 @@ pipeline {
   agent any
 
   stages{
-
+	  
+stage ('Clone the project') {
+      steps{
+	  git ([URL: 'https://github.com/Debadutta-Pradhan/devops_project.git', branch: 'master', credentialsId: 'gitlab'])
+      }
+    }
     stage ('Build Docker Image') {
       steps{
         echo "Building Docker Image"
